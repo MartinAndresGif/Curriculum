@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Curriculum Digital Moderno</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link href="./carousel.rtl.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Fondo gris claro moderno */
+        }
+        .accent-color {
+            color: #4f46e5; /* Índigo moderno */
+        }
+        .bg-accent {
+            background-color: #4f46e5;
+        }
+        .badge-skill {
+            background-color: #e2e8f0;
+            color: #334155;
+            font-weight: 500;
+            border-radius: 8px;
+            padding: 8px 14px;
+            transition: all 0.2s ease;
+        }
+        .badge-skill:hover {
+            background-color: #4f46e5;
+            color: white;
+        }
+        .card-custom {
+            border: none;
+            border-radius: 16px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+        /* Línea de tiempo sutil para experiencia */
+        .timeline-item {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid #e2e8f0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #4f46e5;
+        }
+
+        /* --- CONTROL DE IMÁGENES Y CAROUSEL --- */
+        
+        /* Foto de perfil */
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        /* Imágenes del carrusel (Capturas de proyectos) */
+        .carousel-container {
+            border-radius: 16px;
+            overflow: hidden; /* Mantiene las esquinas redondeadas en las imágenes */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .carousel-img {
+            width: 100%;
+            /* Forzamos un aspecto de pantalla 16:9 ideal para capturas de webs */
+            aspect-ratio: 16 / 9; 
+            /* Cubre el espacio sin deformarse y se alinea arriba para mostrar el inicio de la web */
+            object-fit: cover;
+            object-position: top; 
+            background-color: #f1f5f9;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: rgba(79, 70, 229, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }            
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR (Movida dentro del body para cumplir con el estándar HTML) -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold accent-color" href="#">Mi Curriculum</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link" href="#">Proyectos</a>
+                    <a class="nav-link" href="#">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5 py-4">
+        <div class="row g-4">
+            
+            <!-- COLUMNA IZQUIERDA: Perfil y Datos de Contacto -->
+            <div class="col-lg-4">
+                <div class="card card-custom p-4 text-center sticky-top" style="top: 2rem; z-index: 999;">
+                    <!-- Foto de perfil con clase limpia -->
+                    <div class="position-relative d-inline-block mx-auto mb-4">
+                        <img src="./1000788834.jpg" class="rounded-circle border border-4 border-white shadow-sm profile-img" alt="Foto de Perfil de Martin Andres">
+                    </div>
+                    
+                    <h2 class="fw-bold tracking-tight mb-1">Martin Andres</h2>
+                    <p class="accent-color fw-semibold mb-4">Programador Web</p>
+                    
+                    <!-- Contacto en lista limpia -->
+                    <div class="text-start mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-light p-2 rounded-3 me-3 text-muted"><i class="bi bi-envelope-fill"></i></div>
+                            <div>
+                                <small class="text-muted d-block" style="font-size: 0.75rem;">Correo</small>
+                                <span class="fw-medium text-break">martinserranobernaez@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-light p-2 rounded-3 me-3 text-muted"><i class="bi bi-linkedin"></i></div>
+                            <div>
+                                <small class="text-muted d-block" style="font-size: 0.75rem;">LinkedIn</small>
+                                <span class="fw-medium">Martin Andres</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-light p-2 rounded-3 me-3 text-muted"><i class="bi bi-geo-alt-fill"></i></div>
+                            <div>
+                                <small class="text-muted d-block" style="font-size: 0.75rem;">Ubicación</small>
+                                <span class="fw-medium">Madrid, España</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="text-muted opacity-25">
+
+                    <!-- Habilidades -->
+                    <div class="text-start mt-3">
+                        <h6 class="fw-bold text-uppercase text-muted mb-3" style="font-size: 0.75rem; letter-spacing: 1px;">Habilidades</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge-skill">HTML</span>
+                            <span class="badge-skill">CSS</span>
+                            <span class="badge-skill">Bootstrap</span>
+                            <span class="badge-skill">JavaScript</span>
+                            <span class="badge-skill">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA: Experiencia, Proyectos y Educación -->
+            <div class="col-lg-8">
+                
+                <!-- Perfil Profesional -->
+                <div class="card card-custom p-4 mb-4">
+                    <h4 class="fw-bold mb-3"><span class="accent-color"><i class="bi bi-person-fill"></i></span> Perfil Profesional</h4>
+                    <p class="text-secondary lh-lg mb-0">
+                        Desarrollador web entusiasta enfocado en crear experiencias digitales fluidas y estéticamente atractivas. Especializado en maquetación responsiva y desarrollo limpio. Apasionado por aprender nuevas tecnologías y resolver problemas de forma creativa.
+                    </p>
+                </div>
+
+                <!-- Carrusel de Proyectos (Optimizado) -->
+                <div class="card card-custom p-4 mb-4">
+                    <h4 class="fw-bold mb-3"><span class="accent-color"><i class="bi bi-laptop"></i></span> Mis Proyectos</h4>
+                    <div id="carouselExample" class="carousel slide carousel-container">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./Captura de tela 2026-07-16 193905.png" class="carousel-img" alt="Captura de pantalla del Proyecto 1" width="800" height="450">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./Captura de tela 2026-07-16 193905.png" class="carousel-img" alt="Captura de pantalla del Proyecto 2" width="800" height="450">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./Captura de tela 2026-07-16 193905.png" class="carousel-img" alt="Captura de pantalla del Proyecto 3" width="800" height="450">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">   
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Experiencia Laboral con Línea de Tiempo -->
+                <div class="card card-custom p-4 mb-4">
+                    <h4 class="fw-bold mb-4"><span class="accent-color"><i class="bi bi-briefcase-fill"></i></span> Experiencia Laboral</h4>
+                    
+                    <!-- Puesto 1 -->
+                    <div class="timeline-item pb-4 mb-3">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap mb-1">
+                            <h5 class="fw-bold mb-0">Proyectos Profesionales</h5>
+                            <span class="badge bg-light text-dark fw-medium rounded-pill px-3 py-2">Actualidad</span>
+                        </div>
+                        <p class="accent-color fw-medium mb-2" style="font-size: 0.9rem;">Freelance / Proyectos Propios</p>
+                        <p class="text-secondary mb-0">Desarrollo y mantenimiento de interfaces de usuario responsivas. Optimización de velocidad de carga y maquetación usando frameworks modernos.</p>
+                    </div>
+                    
+                    <!-- Puesto 2 -->
+                    <div class="timeline-item pb-2">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap mb-1">
+                            <h5 class="fw-bold mb-0">Asistente de Desarrollo Web</h5>
+                            <span class="badge bg-light text-dark fw-medium rounded-pill px-3 py-2">2025 - 2026</span>
+                        </div>
+                        <p class="accent-color fw-medium mb-2" style="font-size: 0.9rem;">Agencia Digital Creativa</p>
+                        <p class="text-secondary mb-0">Colaboración en la estructuración de Landing Pages y soporte técnico para optimizar componentes UX/UI en plataformas de clientes.</p>
+                    </div>
+                </div>
+
+                <!-- Educación -->
+                <div class="card card-custom p-4">
+                    <h4 class="fw-bold mb-4"><span class="accent-color"><i class="bi bi-mortarboard-fill"></i></span> Educación</h4>
+                    
+                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                        <div>
+                            <h5 class="fw-bold mb-1">Curso Técnico de Desarrollo de Software</h5>
+                            <p class="text-muted mb-0">Senac-PR</p>
+                        </div>
+                        <span class="badge bg-light text-dark fw-medium rounded-pill px-3 py-2">2020 - 2024</span>
+                    </div>  
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
